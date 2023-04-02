@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 24, 2021 at 07:59 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 02 Apr 2023 pada 16.17
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,34 +18,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lsp_penjualan`
+-- Database: `crud`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Struktur dari tabel `mahasiswa`
 --
 
-CREATE TABLE `barang` (
+CREATE TABLE `mahasiswa` (
   `id` int(11) NOT NULL,
-  `kd_barang` varchar(15) DEFAULT NULL,
-  `nama_barang` varchar(50) DEFAULT NULL,
-  `satuan` varchar(15) DEFAULT NULL,
-  `harga` int(11) NOT NULL
+  `nim` varchar(15) DEFAULT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `kelas` varchar(15) DEFAULT NULL,
+  `semester` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `barang`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
-INSERT INTO `barang` (`id`, `kd_barang`, `nama_barang`, `satuan`, `harga`) VALUES
-(1, '123', 'Laptop HP 14 Inchi', 'PCS', 35000);
+INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `kelas`, `semester`) VALUES
+(3, '4.33.20.1.25', 'Wayan', 'TI-3B', 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -59,7 +59,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_login`, `username`, `password`, `nama_pengguna`, `telepon`, `email`, `alamat`) VALUES
@@ -70,29 +70,29 @@ INSERT INTO `user` (`id_login`, `username`, `password`, `nama_pengguna`, `telepo
 --
 
 --
--- Indexes for table `barang`
+-- Indeks untuk tabel `mahasiswa`
 --
-ALTER TABLE `barang`
+ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_login`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang`
+-- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
-ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `mahasiswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
