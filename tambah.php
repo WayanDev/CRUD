@@ -17,24 +17,24 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Kd barang</label>
-                            <input type="text" class="form-control" required name="kd_barang" id="kd_barang" placeholder="">
+                            <label for="">NIM</label>
+                            <input type="text" class="form-control" required name="nim" id="nim" placeholder="Masukkan NIM">
                         </div>
                         
                         <div class="form-group">
-                            <label for="">Nama barang</label>
-                            <input type="text" class="form-control" required name="nama_barang" id="nama_barang" placeholder="">
+                            <label for="">Nama</label>
+                            <input type="text" class="form-control" required name="nama" id="nama" placeholder="Masukkan Nama">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="">Satuan</label>
-                            <input type="text" class="form-control" required name="satuan" id="satuan" placeholder="">
+                            <label for="">Kelas</label>
+                            <input type="text" class="form-control" required name="kelas" id="kelas" placeholder="Masukkan Kelas">
                         </div>
                         
                         <div class="form-group">
-                            <label for="">Harga</label>
-                            <input type="number" class="form-control" required name="harga" id="harga" placeholder="">
+                            <label for="">Semester</label>
+                            <input type="number" class="form-control" required name="semester" id="semester" placeholder="Masukkan Semester">
                         </div>
                         <div class="form-group">
                             <label for="">Aksi</label>

@@ -10,7 +10,7 @@
 <div class="container">
     <div class="card mt-5">
         <div class="card-header">
-            Data Barang
+            Data Mahasiswa
         </div>
         <div class="card-body">
             <a class="btn btn-primary btn-md" href="tambah.php" role="button">
@@ -21,17 +21,17 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kd barang</th>
-                            <th>Nama barang</th>
-                            <th>Satuan</th>
-                            <th>Harga</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Semester</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
                             $no = 1;
-                            $sql = "SELECT * FROM barang ORDER BY id DESC";
+                            $sql = "SELECT * FROM mahasiswa ORDER BY id DESC";
                             $row = $koneksi->prepare($sql);
                             $row->execute();
                             $hasil = $row->fetchAll(PDO::FETCH_OBJ);
@@ -39,10 +39,10 @@
                         ?>
                         <tr>
                             <td><?= $no;?></td>
-                            <td><?=$r->kd_barang;?></td>      
-                            <td><?=$r->nama_barang;?></td>      
-                            <td><?=$r->satuan;?></td>      
-                            <td><?=$r->harga;?></td>
+                            <td><?=$r->nim;?></td>      
+                            <td><?=$r->nama;?></td>      
+                            <td><?=$r->semester;?></td>      
+                            <td><?=$r->kelas;?></td>
                             <td>
                                 <a href="<?= "edit.php?id=".$r->id;?>" 
                                     class="btn btn-success btn-sm" 

@@ -26,12 +26,12 @@
     }
 
     if(!empty($_GET['aksi'] == "tambah")) {
-        $data[] =  $_POST["kd_barang"];
-        $data[] =  $_POST["nama_barang"];
-        $data[] =  $_POST["satuan"];
-        $data[] =  $_POST["harga"];
+        $data[] =  $_POST["nim"];
+        $data[] =  $_POST["nama"];
+        $data[] =  $_POST["kelas"];
+        $data[] =  $_POST["semester"];
 
-        $sql = "INSERT INTO barang (kd_barang,nama_barang,satuan,harga ) VALUES ( ?,?,?,?)";
+        $sql = "INSERT INTO mahasiswa (nim,nama,kelas,semester ) VALUES ( ?,?,?,?)";
         $row = $koneksi->prepare($sql);
         $row->execute($data);
 
@@ -41,13 +41,13 @@
 
     if(!empty($_GET['aksi'] == "edit")) {
         $id =  (int)$_GET["id"];
-        $data[] =  $_POST["kd_barang"];
-        $data[] =  $_POST["nama_barang"];
-        $data[] =  $_POST["satuan"];
-        $data[] =  $_POST["harga"];
+        $data[] =  $_POST["nim"];
+        $data[] =  $_POST["nama"];
+        $data[] =  $_POST["kelas"];
+        $data[] =  $_POST["semester"];
 
         $data[] = $id;
-        $sql = "UPDATE barang SET kd_barang = ?, nama_barang = ?, satuan = ?, harga = ?  WHERE id = ? ";
+        $sql = "UPDATE mahasiswa SET nim = ?, nama = ?, kelas = ?, semester = ?  WHERE id = ? ";
         $row = $koneksi->prepare($sql);
         $row->execute($data);
 
@@ -58,13 +58,13 @@
     if(!empty($_GET['aksi'] == "hapus")) {
 
         $id =  (int)$_GET["id"]; // should be integer (id)
-        $sql = "SELECT * FROM barang WHERE id = ?";
+        $sql = "SELECT * FROM mahasiswa WHERE id = ?";
         $row = $koneksi->prepare($sql);
         $row->execute(array($id));
         $cek = $row->rowCount();
         if($cek > 0)
         {
-            $sql_delete = "DELETE FROM barang WHERE id = ?";
+            $sql_delete = "DELETE FROM mahasiswa WHERE id = ?";
             $row_delete = $koneksi->prepare($sql_delete);
             $row_delete->execute(array($id));
             echo "<script>window.location='index.php';</script>";
